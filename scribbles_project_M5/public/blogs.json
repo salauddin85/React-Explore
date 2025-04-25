@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "cover": "https://i.ibb.co.com/2Bq4Pf3/kevin-mueller-1-WEHdc-FYUE-unsplash.jpg",
+      "title": "The Silent Echo",
+      "author_img": "https://i.ibb.co.com/KcJGtYVS/istockphoto-2197693691-1024x1024.jpg",
+      "author": "Ava Carter",
+      "reading_time": 8,
+      "hashtags": ["#mystery", "#thriller", "#bestseller"]
+    },
+    {
+      "id": 2,
+      "cover": "https://i.ibb.co.com/2Bq4Pf3/kevin-mueller-1-WEHdc-FYUE-unsplash.jpg",
+      "title": "Code & Coffee",
+      "author_img": "https://i.ibb.co.com/KcJGtYVS/istockphoto-2197693691-1024x1024.jpg",
+      "author": "Liam Smith",
+      "reading_time": 5,
+      "hashtags": ["#coding", "#tech", "#lifestyle"]
+    },
+    {
+      "id": 3,
+      "cover": "https://i.ibb.co.com/2Bq4Pf3/kevin-mueller-1-WEHdc-FYUE-unsplash.jpg",
+      "title": "Winds of Tomorrow",
+      "author_img": "https://i.ibb.co.com/KcJGtYVS/istockphoto-2197693691-1024x1024.jpg",
+      "author": "Noah Bennett",
+      "reading_time": 7,
+      "hashtags": ["#inspiration", "#selfhelp", "#motivation"]
+    },
+    {
+      "id": 4,
+      "cover": "https://i.ibb.co.com/2Bq4Pf3/kevin-mueller-1-WEHdc-FYUE-unsplash.jpg",
+      "title": "Pixels & Paint",
+      "author_img": "https://i.ibb.co.com/KcJGtYVS/istockphoto-2197693691-1024x1024.jpg",
+      "author": "Emma Garcia",
+      "reading_time": 6,
+      "hashtags": ["#design", "#art", "#creativity"]
+    },
+    {
+      "id": 5,
+      "cover": "https://i.ibb.co.com/2Bq4Pf3/kevin-mueller-1-WEHdc-FYUE-unsplash.jpg",
+      "title": "Startup Sparks",
+      "author_img": "https://i.ibb.co.com/KcJGtYVS/istockphoto-2197693691-1024x1024.jpg",
+      "author": "Oliver Kim",
+      "reading_time": 9,
+      "hashtags": ["#entrepreneurship", "#business", "#startups"]
+    }
+  ]
+  
