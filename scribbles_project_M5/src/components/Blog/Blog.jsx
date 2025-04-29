@@ -12,9 +12,7 @@ const Blog = ({ blog,handleAddToBookmarks,handleMarkAsRead }) => {
     author,
     reading_time,
     hashtags,
-    posted_date,
-
-  } = blog;
+    posted_date,} = blog;
   return (
     <div>
       <div>
@@ -34,6 +32,7 @@ const Blog = ({ blog,handleAddToBookmarks,handleMarkAsRead }) => {
         <div className="text-xl opacity-70">
           <span>{reading_time} min read</span>
           <button className="ms-3" onClick={() => handleAddToBookmarks(blog)}>
+            {/* bookmark icon */}
           <CiBookmark />
         </button>
 
