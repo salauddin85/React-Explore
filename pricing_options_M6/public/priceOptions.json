@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "name": "FitZone Gym",
+      "price": 29.99,
+      "features": ["24/7 Access", "Cardio Equipment", "Free Weights", "Personal Trainer"]
+    },
+    {
+      "id": 2,
+      "name": "Iron Temple",
+      "price": 49.99,
+      "features": ["Sauna", "CrossFit Area", "Locker Room", "Group Classes"]
+    },
+    {
+      "id": 3,
+      "name": "PowerHouse Fitness",
+      "price": 39.99,
+      "features": ["Swimming Pool", "Treadmills", "Yoga Studio", "Zumba Classes"]
+    },
+    {
+      "id": 4,
+      "name": "Muscle Factory",
+      "price": 34.99,
+      "features": ["Free Weights", "Strength Training", "Boxing Ring", "Supplements Bar"]
+    },
+    {
+      "id": 5,
+      "name": "Cardio Core Gym",
+      "price": 27.50,
+      "features": ["Ellipticals", "Spin Classes", "Locker Access", "Fitness Tracker Integration"]
+    }
+  ]
+  

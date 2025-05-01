@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // ES6
 const Link = ({route}) => {
-    console.log(route);
+    // console.log(route);
     return (
         
         <>
@@ -11,7 +11,8 @@ const Link = ({route}) => {
         </>
     );
 };
-Link.PropTypes = {
+Link.propTypes = {
     route: PropTypes.object.isRequired
 }
+
 export default Link;
