@@ -1,7 +1,10 @@
 import React from "react";
 import Link from "../Link/Link";
+import { TiThMenu } from "react-icons/ti";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Navbar = () => {
+  const [open, setOpen] = React.useState(false);
   const routes = [
     { id: 1, name: "Home", path: "/" },
     { id: 2, name: "About", path: "/about" },
@@ -13,12 +16,23 @@ const Navbar = () => {
   return (
     <nav>
       <section>
-        <div className="md:flex justify-between m-4">
-          <div className=" text-3xl text-cyan-500 font-bold ">
-            <h2>Logo</h2>
+        <div className="md:flex justify-between m-4 items-center">
+          {/* Left Side: Logo or Menu Icon */}
+          <div className="md:hidden text-3xl text-cyan-500 font-bold">
+            {open ? (
+              <AiOutlineClose onClick={() => setOpen(!open)} />
+            ) : (
+              <TiThMenu onClick={() => setOpen(!open)} />
+            )}
           </div>
-          <div>
-            <ul className="md:flex ">
+          {/* Show Logo on Medium and Up */}
+          <div className="hidden md:block text-3xl font-bold text-cyan-500">
+            Logo
+          </div>
+
+          {/* Right Side: Menu Items */}
+          <div className={`md:flex ${open ? "block" : "hidden"}`}>
+            <ul className="md:flex">
               {routes.map((route) => (
                 <Link key={route.id} route={route}></Link>
               ))}
