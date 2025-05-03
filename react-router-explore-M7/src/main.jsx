@@ -28,7 +28,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/users",
-        element: <Users></Users>
+        element: <Users></Users>,
+        loader: async () => {
+          const res = await fetch('https://jsonplaceholder.typicode.com/users');
+          return res.json();
+        }
+        
       },
       
     ]
