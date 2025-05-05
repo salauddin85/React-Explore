@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 function User({ user }) {
-  console.log(user);
+  // console.log(user);
   const { id, name, email } = user;
   return (
     <div className="border-2 border-red-500 p-5 rounded-2xl " >
