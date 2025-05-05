@@ -5,7 +5,7 @@ function Headar() {
     return (
         <div>
             <nav>
-                <ul >
+                <ul  >
                
                     <Link to ="/">Home</Link>
                     <Link to ="/about">About</Link>
