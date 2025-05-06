@@ -11,6 +11,8 @@ import Home from './Pages/Home/Home.jsx';
 import About from './Pages/About/About.jsx';
 import Users from './Pages/Users/Users.jsx';
 import UserDetails from './Pages/UserDetails/UserDetails.jsx';
+import Posts from './Pages/Posts/Posts.jsx';
+import PostDetail from './Pages/PostDetail/PostDetail.jsx';
 
 
 const router = createBrowserRouter([
@@ -43,6 +45,24 @@ const router = createBrowserRouter([
         loader: async ({ params}) => {
           console.log(params)
           const res = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
+          return res.json();
+        }
+        
+      },
+      {
+        path: "/posts",
+        element: <Posts></Posts>,
+        loader: async () => {
+          const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+          return res.json();
+        }
+      },
+      {
+        path: "/posts/:id",
+        element: <PostDetail></PostDetail>,
+        loader: async ({ params}) => {
+          console.log(params)
+          const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
           return res.json();
         }
         
