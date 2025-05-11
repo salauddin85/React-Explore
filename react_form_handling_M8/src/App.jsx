@@ -1,5 +1,6 @@
 
 import './App.css'
+import Grandpa from './components/Grandpa/Grandpa.jsx'
 import HookForm from './components/HookForm/HookForm.jsx'
 import ReusableForm from './components/ReusableForm/ReusableForm.jsx'
 // import SimpleForm from './components/SimpleForm/SimpleForm'
@@ -25,9 +26,9 @@ function App() {
       <p className="text-2xl font-bold text-red-600">Hello Vite + React!</p>
       <StatefulForm /> */}
       {/* <HookForm /> */}
-      <ReusableForm formtitle={"Sign up"} submitbtnText = {"Sign up"} handleSubmit={handleSignUpSubmit} />
-      <ReusableForm formtitle={"Profile update"} submitbtnText = {"Update"} handleSubmit={handleProfileUpdateSubmit} />
-
+      {/* <ReusableForm formtitle={"Sign up"} submitbtnText = {"Sign up"} handleSubmit={handleSignUpSubmit} />
+      <ReusableForm formtitle={"Profile update"} submitbtnText = {"Update"} handleSubmit={handleProfileUpdateSubmit} /> */}
+      <Grandpa />
 
     </>
   )
