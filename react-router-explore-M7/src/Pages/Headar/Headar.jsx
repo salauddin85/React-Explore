@@ -19,6 +19,12 @@ function Headar() {
                     <NavLink to="/contact">Contact</NavLink>
                     <NavLink to="/users">Users</NavLink>
                     <NavLink to="/posts">Posts</NavLink>
+
+                    <NavLink to="/services">Services</NavLink>
+                    <NavLink to="/products">Products</NavLink>
+                    <NavLink to="/blog">Blog</NavLink>
+                    <NavLink to="/gallery">Gallery</NavLink>
+                    <NavLink to="/faq">FAQ</NavLink>
                     
                 </ul>
             </nav>
