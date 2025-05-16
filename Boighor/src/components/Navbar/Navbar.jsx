@@ -7,7 +7,8 @@ const Navbar = () => {
 };
 
   return (
-    <div class="navbar bg-white shadow-sm  px-0 lg:px-10">
+   <div class="navbar w-full bg-white shadow-sm px-0 md:px-4 lg:px-10">
+
       <div class="navbar-start">
         <div class="dropdown">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -46,7 +47,7 @@ const Navbar = () => {
         </div>
         <a class="  normal-case font-bold   lg:text-2xl  text-green-600">BOIGHOR</a>
       </div>
-      <div class="navbar-center hidden lg:flex">
+      <div class="navbar hidden lg:flex">
         <ul class="menu menu-horizontal px-1 gap-3">
           <li>
             <button className="text-black font-bold text-lg">{commonComponent("Home")}</button>
@@ -59,7 +60,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div class="navbar-end mr-2 gap-3 lg:flex">
+      <div class="navbar-end  gap-3 lg:flex">
         <a class="btn btn-success hover:btn-accent font-bold ">SignIn</a>
         <a class="btn btn-ghost text-black hover:text-white font-bold">SignUp</a>
       </div>

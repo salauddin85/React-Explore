@@ -8,6 +8,8 @@ import About from './components/About/About.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import Error from './components/Error/Error.jsx';
 import Home from './components/Home/Home.jsx';
+import Books from './components/Books/Books.jsx';
+import Book from './components/Book/Book.jsx';
 
 
 const router = createBrowserRouter([
@@ -21,12 +23,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/books",
+        element: <Books />,
       },
       {
-        path: "/contact",
-        element: <Contact />,
+        path:"/books/:id",
+        element:<Book />,
       },
     ],
   },
