@@ -1,5 +1,4 @@
-import React from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import addToMarkRead from "../../utility/addToMarkRead";
 
 const BookDetail = () => {

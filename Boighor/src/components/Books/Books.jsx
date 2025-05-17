@@ -1,4 +1,3 @@
-import React, { use } from 'react';
 import Book from '../Book/Book';
 
 import { useState } from 'react';
@@ -7,17 +6,7 @@ import { useEffect } from 'react';
 
 const Books = () => {
     const [books, setBooks] = useState([]);
-    // if you want to use of dynamic api or third party api call you can use this code
-    // useEffect(() => {
-    //     // Fetch books from an API or use a static list
-    //     const fetchBooks = async () => {
-    //         const response = await fetch('https://api.example.com/books');
-    //         const data = await response.json();
-    //         setBooks(data);
-    //     };
-
-    //     fetchBooks();
-    // }, []);
+   
     useEffect(() => {
         fetch('public/booksData.json')
             .then((response) => {
