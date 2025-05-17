@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 //  common componentfunction for button,pages to read,listed books
@@ -50,7 +51,9 @@ const Navbar = () => {
       <div class="navbar hidden lg:flex">
         <ul class="menu menu-horizontal px-1 gap-3">
           <li>
-            <button className="text-black font-bold text-lg">{commonComponent("Home")}</button>
+            <Link to="/">
+              <button className="text-black font-bold text-lg">{commonComponent("Home")}</button>
+            </Link>
           </li>
           <li>
             <p className="text-black font-bold text-lg">{commonComponent("Listed Books")}</p>

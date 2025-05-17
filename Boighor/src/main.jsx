@@ -16,7 +16,7 @@ import BookDetail from './components/BookDetail/BookDetail.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Root/>,
     errorElement: <Error />,
     children: [
       {
