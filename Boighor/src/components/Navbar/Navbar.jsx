@@ -61,7 +61,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div class="navbar-end  gap-3 lg:flex">
-        <a class="btn btn-success hover:btn-accent font-bold ">SignIn</a>
+        <a class="  bg-green-600 hover:bg-green-700 font-bold px-3 py-2 text-white rounded cursor-pointer ">SignIn</a>
         <a class="btn btn-ghost text-black hover:text-white font-bold">SignUp</a>
       </div>
     </div>

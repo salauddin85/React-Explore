@@ -1,10 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
   // Destructure the book object to extract properties
-  const { bookName, author, rating, category, yearOfPublishing } = book;
+  const {bookId, bookName, author, rating, category, yearOfPublishing } = book;
   return (
-    <div className="card  w-[374px] h-[510px] shadow-sm mx-auto bg-gray-100 p-4">
+
+    <Link to={`/books/${bookId}`} >
+    
+        <div className="card  w-[394px] h-[530px] shadow-sm mx-auto bg-gray-100 p-5">
       <div className=" bg-gray-200  rounded-2xl">
         <div className="my-4 flex justify-center">
           <img
@@ -22,7 +26,7 @@ const Book = ({ book }) => {
           {/* <div className="badge badge-secondary">{rating}</div> */}
         </h2>
         <div className="text-black">Author: {author}</div>
-
+        <div className="my-2 border-2 border-dashed border-gray-400"></div>
         <div className="card-actions justify-between items-center">
          {/* Display the category and year of publishing */}
          <div className="flex gap-2">
@@ -32,16 +36,19 @@ const Book = ({ book }) => {
             </div>
          </div>
          <div>
-            <div className="btn btn-outline btn-success font-bold text-black">{rating}</div>
+            <div className="btn btn-outline btn-success font-bold text-black">{rating} ⭐</div>
          </div>
         </div>
         <div className="text-center ">
-          <button className=" bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded  ">
+         <button className=" bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded  ">
             Read More
           </button>
         </div>
       </div>
     </div>
+    
+    </Link>
+
   );
 };
 

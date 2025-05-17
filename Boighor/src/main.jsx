@@ -10,6 +10,7 @@ import Error from './components/Error/Error.jsx';
 import Home from './components/Home/Home.jsx';
 import Books from './components/Books/Books.jsx';
 import Book from './components/Book/Book.jsx';
+import BookDetail from './components/BookDetail/BookDetail.jsx';
 
 
 const router = createBrowserRouter([
@@ -27,8 +28,20 @@ const router = createBrowserRouter([
         element: <Books />,
       },
       {
-        path:"/books/:id",
-        element:<Book />,
+        path:"/books/:bookId",
+        element:<BookDetail />,
+        loader: async ({params}) => {
+          return fetch('/booksData.json')
+          .then((response) => {
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              return response.json();
+          })
+          .then((data) => data.find(book => book.id == params.id))
+          .catch((error) => console.error('Error fetching books:', error));
+        }
+
       },
     ],
   },

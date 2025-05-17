@@ -16,7 +16,7 @@ const Banner = () => {
             collection of books. Whether you're looking for fiction, non-fiction,
             or educational resources, we have something for everyone.
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <button className=" bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer">Get Started</button>
         </div>
       </div>
     </div>
