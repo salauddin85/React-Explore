@@ -4,8 +4,6 @@ import { useLoaderData, useParams } from 'react-router-dom';
 const BookDetail = () => {
     // Destructure the book object to extract properties
     const loadedData = useLoaderData();
-    // const userparms = useParams();
-    // console.log(userparms);
     console.log(loadedData);
     return (
         <div>
