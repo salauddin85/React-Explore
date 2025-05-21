@@ -6,13 +6,8 @@
 3. Install Firebase SDK:
    npm install firebase
 
-4. Initialize Firebase in your project:
-   - Create a firebase.js file in your src directory.
-   - Import the functions you need from the SDKs you need.
-   - Initialize Firebase with your config.
-
-5. Use Firebase services in your components.
-   - Import the firebase.js file where you need it.
-   - Use the Firebase functions as needed.
-
+4.get firebase config and do not store it in the client side
+5.export app from firebase.js
+6.create auth and export it
+7.In the console authentication > started> enable Google Provider
 */
