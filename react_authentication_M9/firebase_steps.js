@@ -10,4 +10,6 @@
 5.export app from firebase.js
 6.create auth and export it
 7.In the console authentication > started> enable Google Provider
+8.
+
 */
