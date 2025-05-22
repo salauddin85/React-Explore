@@ -1,6 +1,5 @@
-import React from 'react';
+
 import { GoogleAuthProvider, signInWithPopup , GithubAuthProvider} from 'firebase/auth';
-// import { SignInWithPopup } from 'firebase/auth';
 import auth from '../../firebase/firebase.js';
 import { useState } from 'react';
 const Login = () => {
@@ -49,6 +48,7 @@ const Login = () => {
                 const errorMessage = error.message;
                 // The email of the user's account used.
                 const email = error.customData.email;
+                console.log(email);
                 // The AuthCredential type that was used.
                 const credential = GithubAuthProvider.credentialFromError(error);
             });
