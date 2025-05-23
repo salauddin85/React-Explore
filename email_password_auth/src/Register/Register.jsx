@@ -1,8 +1,12 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import React from "react";
+import  { useState } from "react";
 import auth from "../firebase/Firebase";
 
 const Register = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted");
@@ -12,12 +16,19 @@ const Register = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        setError("");
+        setSuccess(true);
+        setEmail(user.email);
+        setPassword(user.password);
         console.log(user);
         // ...
       })
       .catch((error) => {
+        console.log("Error", error);
         const errorCode = error.code;
         const errorMessage = error.message;
+        setError(errorMessage);
+        setSuccess(false);
         console.log(errorCode, errorMessage);
         // ..
       });
@@ -45,6 +56,10 @@ const Register = () => {
               </div>
               <button className="btn btn-neutral mt-4">Register</button>
             </form>
+          </div>
+          <div className="card-body">
+            {error && <p className="text-red-500">{error}</p>}
+            {success && <p className="text-green-500">User created successfully!</p>}
           </div>
         </div>
       </div>
