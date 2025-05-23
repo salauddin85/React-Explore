@@ -1,12 +1,32 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import React from "react";
+import auth from "../firebase/Firebase";
 
 const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted");
-    console.log(event.target.email.value);
-    console.log(event.target.password.value);
+    // console.log(event.target.email.value);
+    // console.log(event.target.password.value);
     // Handle form submission logic here
+    // create user with email and password
+    createUserWithEmailAndPassword(
+      auth,
+      event.target.email.value,
+      event.target.password.value
+    )
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+        // ..
+      });
   };
   return (
     <div className="hero bg-base-200 min-h-screen">
