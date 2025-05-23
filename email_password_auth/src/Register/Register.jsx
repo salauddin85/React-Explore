@@ -6,15 +6,9 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted");
-    // console.log(event.target.email.value);
-    // console.log(event.target.password.value);
-    // Handle form submission logic here
-    // create user with email and password
-    createUserWithEmailAndPassword(
-      auth,
-      event.target.email.value,
-      event.target.password.value
-    )
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
