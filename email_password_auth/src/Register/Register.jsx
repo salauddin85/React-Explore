@@ -12,6 +12,18 @@ const Register = () => {
     console.log("Form submitted");
     const email = event.target.email.value;
     const password = event.target.password.value;
+    // password validation
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long");
+      setSuccess(false);
+      return;
+    }
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{6,}$/;
+    if (!regex.test(password)) {
+      setError("Password must contain at least one special character, one uppercase letter, one lowercase letter, and one number");
+      setSuccess(false);
+      return;
+    }
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
