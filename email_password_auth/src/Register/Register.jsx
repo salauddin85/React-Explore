@@ -1,10 +1,14 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import  { useState } from "react";
 import auth from "../firebase/Firebase";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const handleSubmit = (event) => {
@@ -57,12 +61,25 @@ const Register = () => {
           </p>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-          <div className="card-body">
+          <div className="card-body relative">
             <form onSubmit={handleSubmit}>
               <label className="label">Email</label>
               <input type="email" name="email" className="input" placeholder="Email" />
               <label className="label">Password</label>
-              <input type="password" name="password" className="input" placeholder="Password" />
+              <input type={passwordVisible ? "text" : "password"} name="password" className="input" placeholder="Password" />
+              {
+                passwordVisible ? (
+                  <FaEyeSlash
+                    className="absolute right-12 top-29 cursor-pointer"
+                    onClick={() => setPasswordVisible(!passwordVisible)}
+                  />
+                ) : (
+                  <FaEye
+                    className="absolute right-12 top-29 cursor-pointer"
+                    onClick={() => setPasswordVisible(!passwordVisible)}
+                  />
+                )}
+              
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
