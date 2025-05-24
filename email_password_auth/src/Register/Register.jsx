@@ -1,9 +1,8 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import  { useState } from "react";
+import { useState } from "react";
 import auth from "../firebase/Firebase";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -11,6 +10,7 @@ const Register = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [terms, setTerms] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted");
@@ -24,8 +24,16 @@ const Register = () => {
     }
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{6,}$/;
     if (!regex.test(password)) {
-      setError("Password must contain at least one special character, one uppercase letter, one lowercase letter, and one number");
+      setError(
+        "Password must contain at least one special character, one uppercase letter, one lowercase letter, and one number"
+      );
       setSuccess(false);
+      return;
+    }
+    if (!terms) {
+      setError("You must accept the terms and conditions");
+      setSuccess(false);
+      setTerms(false);
       return;
     }
     createUserWithEmailAndPassword(auth, email, password)
@@ -64,31 +72,53 @@ const Register = () => {
           <div className="card-body relative">
             <form onSubmit={handleSubmit}>
               <label className="label">Email</label>
-              <input type="email" name="email" className="input" placeholder="Email" />
+              <input
+                type="email"
+                name="email"
+                className="input"
+                placeholder="Email"
+              />
               <label className="label">Password</label>
-              <input type={passwordVisible ? "text" : "password"} name="password" className="input" placeholder="Password" />
-              {
-                passwordVisible ? (
-                  <FaEyeSlash
-                    className="absolute right-12 top-29 cursor-pointer"
-                    onClick={() => setPasswordVisible(!passwordVisible)}
-                  />
-                ) : (
-                  <FaEye
-                    className="absolute right-12 top-29 cursor-pointer"
-                    onClick={() => setPasswordVisible(!passwordVisible)}
-                  />
-                )}
-              
+              <input
+                type={passwordVisible ? "text" : "password"}
+                name="password"
+                className="input"
+                placeholder="Password"
+              />
+              {passwordVisible ? (
+                <FaEyeSlash
+                  className="absolute right-12 top-29 cursor-pointer"
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                />
+              ) : (
+                <FaEye
+                  className="absolute right-12 top-29 cursor-pointer"
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                />
+              )}
+
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
-              <button className="btn btn-neutral mt-4">Register</button>
+              
+                <label className="label">
+                  <input
+                    type="checkbox"
+                    className="checkbox"
+                    onClick={() => setTerms(!terms)}
+                    checked={terms}
+                  />
+                  Terms and conditions
+                </label>
+           
+              <button className="btn btn-neutral mt-16">Register</button>
             </form>
           </div>
           <div className="card-body">
             {error && <p className="text-red-500">{error}</p>}
-            {success && <p className="text-green-500">User created successfully!</p>}
+            {success && (
+              <p className="text-green-500">User created successfully!</p>
+            )}
           </div>
         </div>
       </div>
